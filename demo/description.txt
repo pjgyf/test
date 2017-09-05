@@ -1,0 +1,9 @@
+npm使用
+1.npm init
+
+
+sublime 插件快捷鍵
+颜色识别器 ：ctrl + shift + alt + c
+js格式对齐 ： Ctrl + alt + f
+等号对齐： Ctrl + shift + alt + a
+运行脚本：Ctrl + B

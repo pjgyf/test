@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html v-app>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible"  content="IE=edge" >
+	<title>购物车</title>
+	<link rel="stylesheet" href="css/index.css">
+	
+</head>
+<body>
+	<div id="app">
+		<h1>{{title}}</h1>
+		<ul id="t_head" class="t_head">
+			<li><span class="t_fixed">全选</span> <input type="checkbox" :checked="checkAllFlag" @click="selectAll" :checked="checkAllFlag"> </li>
+			<li>商品信息</li>
+			<li>商品金额</li>
+			<li>商品数量</li>
+			<li>总金额</li>
+			<li>编辑</li>
+		</ul>
+		<ul id="t_body" class="t_body">
+			<li v-for="(item,index) in productList">
+				<ul class="item">
+					<li><input type="checkbox"  @click="selectItem(item)" :checked="item.checked"></li>
+					<li>
+						<img  alt="" v-bind:src="item.imgSrc" height="50px">{{index}}.kaka
+					</li>
+					<li>{{item.prince | formatMoney}}</li>
+					<li>
+						<a href="javascript:" v-on:click="changNum(-1,item)">-</a>
+						<input type="text" name="number" value="1" class="num" v-model="item.number">
+						<a href="javascript:;" @click="changNum(1,item)">+</a>
+					</li>
+					<li>
+						<span>{{item.prince * item.number}}</span>
+					</li>
+					<li v-on:click="deleteItem(item)">删除</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="footer"><span>总金额： {{totalMoney |formatMoney}}</span> <input style="background-color: #BF1212;width: 100px;height:60%;border: none" type="button" value="结算"></div>
+	</div>
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-resource.min.js"></script>
+	<script src="js/index.js"></script>	
+</body>
+</html>

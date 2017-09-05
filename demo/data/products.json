@@ -1,0 +1,16 @@
+{
+	"status":1,
+	"mesg":"请求数据成功",
+	"result":{
+			"totalMoney":59,
+			"list":[{
+				"imgSrc":"/myself/demo/images/th.jpg",
+				"prince":19,
+				"number":11
+			},{
+				"imgSrc":"/myself/demo/images/th2.jpg",
+				"prince":5,
+				"number":32
+			}]
+	}
+}
